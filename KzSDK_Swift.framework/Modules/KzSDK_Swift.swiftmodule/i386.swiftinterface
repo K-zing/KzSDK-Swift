@@ -1,0 +1,3516 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-module-flags: -target i386-apple-ios8.3-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -module-name KzSDK_Swift
+import Foundation
+@_exported import KzSDK_Swift
+import Swift
+import SwiftyRSA
+import UIKit
+import WebKit
+extension ApiAction {
+  final public class GetGamePlatformsBalance {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setGamePlatformAccountIds(_ value: [Swift.String]?) -> KzSDK_Swift.ApiAction.GetGamePlatformsBalance
+    final public func addGamePlatformAccountId(_ value: Swift.String) -> KzSDK_Swift.ApiAction.GetGamePlatformsBalance
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetGamePlatformsBalance.Result>) -> KzSDK_Swift.ApiAction.GetGamePlatformsBalance
+    @objc deinit
+  }
+}
+extension ApiAction.GetGamePlatformsBalance {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetGamePlatformsBalance.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetGamePlatformsBalance.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetGamePlatformsBalance.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetGamePlatformsBalance.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetGamePlatformsBalance.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let balances: [KzSDK_Swift.ApiAction.GetGamePlatformsBalance.Result.Body.Balance]?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct Balance : Swift.Codable {
+        public let gamePlatformId: Swift.String?
+        public let value: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class VerifyPlayerPhone {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setPhone(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.VerifyPlayerPhone
+    final public func setValidateCode(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.VerifyPlayerPhone
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.VerifyPlayerPhone.Result>) -> KzSDK_Swift.ApiAction.VerifyPlayerPhone
+    @objc deinit
+  }
+}
+extension ApiAction.VerifyPlayerPhone {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.VerifyPlayerPhone.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.VerifyPlayerPhone.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.VerifyPlayerPhone.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.VerifyPlayerPhone.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiPEVerifyResultData? {
+        get
+        }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+final public class PingHelper {
+  @objc deinit
+}
+final public class KzSetting {
+  public static var initialized: Swift.Bool {
+    get
+  }
+  public static func initialize(apiKey: Swift.String, md5Key: Swift.String)
+  public static func setPublicKey(_ publicKeyString: Swift.String?)
+  public static func setBasicKey(_ basicKeyString: Swift.String?)
+  @objc deinit
+}
+final public class KzGameUtil {
+  public static func getAppUrl(_ gamePlatform: KzSDK_Swift.ApiAction.GetGPByPlatform.Result.Body.GamePlatform, childGame: KzSDK_Swift.ApiAction.GetGPByPlatform.Result.Body.ChildGame? = nil) -> Swift.String?
+  @objc deinit
+}
+extension ApiAction {
+  public class GetGameListByPlatform {
+    public var retryCount: Swift.Int
+    public init()
+    public func post()
+    public func loadCacheIfPossible(_ value: Swift.Bool) -> KzSDK_Swift.ApiAction.GetGameListByPlatform
+    public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetGameListByPlatform.Result>) -> KzSDK_Swift.ApiAction.GetGameListByPlatform
+    @objc deinit
+  }
+}
+extension ApiAction.GetGameListByPlatform {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetGameListByPlatform.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetGameListByPlatform.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetGameListByPlatform.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetGameListByPlatform.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    final public var gamelist: [[Swift.String : Any]]? {
+      get
+      }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetGameListByPlatform.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    final public class GameList : Swift.Codable {
+      final public let categories: [KzSDK_Swift.ApiAction.GetGPByPlatform.Result.Body.GameCategory]?
+      final public let childs: [KzSDK_Swift.ApiAction.GetGPByPlatform.Result.Body.ChildGame]?
+      final public let childgroups: [KzSDK_Swift.ApiAction.GetGPByPlatform.Result.Body.ChildGroup]?
+      @objc deinit
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetRegisterInfo {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetRegisterInfo.Result>) -> KzSDK_Swift.ApiAction.GetRegisterInfo
+    @objc deinit
+  }
+}
+extension ApiAction.GetRegisterInfo {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetRegisterInfo.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetRegisterInfo.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetRegisterInfo.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetRegisterInfo.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetRegisterInfo.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let regImage: Swift.String?
+        public let regSession: Swift.String?
+        public let regParams: KzSDK_Swift.ApiAction.GetRegisterInfo.Result.Body.RegParams?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct RegParams : Swift.Codable {
+        public var regQQ: Swift.Bool {
+          get
+          }
+        public var regNameMin: Swift.Int? {
+          get
+          }
+        public var regNameMax: Swift.Int? {
+          get
+          }
+        public var regPasswordMin: Swift.Int? {
+          get
+          }
+        public var regPasswordMax: Swift.Int? {
+          get
+          }
+        public var regWithdrawPassword: Swift.Bool {
+          get
+          }
+        public var regBirthday: Swift.Bool {
+          get
+          }
+        public var regRealName: Swift.Bool {
+          get
+          }
+        public var regEmail: Swift.Bool {
+          get
+          }
+        public var regPhone: Swift.Bool {
+          get
+          }
+        public var regWeiXin: Swift.Bool {
+          get
+          }
+        public var regReferCode: Swift.Bool {
+          get
+          }
+        public var regMobileVerify: Swift.Bool? {
+          get
+          }
+        public var regPasswordConfirm: Swift.Bool {
+          get
+          }
+        public var regLegalAge: Swift.Bool {
+          get
+          }
+        public var regHighLevelPassword: Swift.Bool {
+          get
+          }
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class RequestResetPasswordByPhone {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setName(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RequestResetPasswordByPhone
+    final public func setPhone(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RequestResetPasswordByPhone
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.RequestResetPasswordByPhone.Result>) -> KzSDK_Swift.ApiAction.RequestResetPasswordByPhone
+    @objc deinit
+  }
+}
+extension ApiAction.RequestResetPasswordByPhone {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.RequestResetPasswordByPhone.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.RequestResetPasswordByPhone.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.RequestResetPasswordByPhone.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.RequestResetPasswordByPhone.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiRequestPhoneVerifyResultData? {
+        get
+        }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class ResetPasswordVerifySmsCode {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setName(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ResetPasswordVerifySmsCode
+    final public func setPhone(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ResetPasswordVerifySmsCode
+    final public func setValidateCode(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ResetPasswordVerifySmsCode
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.ResetPasswordVerifySmsCode.Result>) -> KzSDK_Swift.ApiAction.ResetPasswordVerifySmsCode
+    @objc deinit
+  }
+}
+extension ApiAction.ResetPasswordVerifySmsCode {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.ResetPasswordVerifySmsCode.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.ResetPasswordVerifySmsCode.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.ResetPasswordVerifySmsCode.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.ResetPasswordVerifySmsCode.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiPEVerifyResultData? {
+        get
+        }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class ApiActionFinishDeposit {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setStatusSuccess() -> KzSDK_Swift.ApiAction.ApiActionFinishDeposit
+    final public func setStatusFail() -> KzSDK_Swift.ApiAction.ApiActionFinishDeposit
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.ApiActionFinishDeposit.Result>) -> KzSDK_Swift.ApiAction.ApiActionFinishDeposit
+    @objc deinit
+  }
+}
+extension ApiAction.ApiActionFinishDeposit {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.ApiActionFinishDeposit.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.ApiActionFinishDeposit.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.ApiActionFinishDeposit.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.ApiActionFinishDeposit.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.ApiActionFinishDeposit.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let success: Swift.Bool
+        public let msg: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+public struct ApiRequestPhoneVerifyResultData : Swift.Codable {
+  public let message: Swift.String?
+  public let status: Swift.Int?
+  public let resendSec: Swift.Int?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public class ApiListener<T> where T : KzSDK_Swift.ApiResultProtocol {
+  public init(onSuccess: @escaping (T) -> Swift.Void, onFail: @escaping (T) -> Swift.Void)
+  public func popAlertOnFail(_ shouldShow: Swift.Bool, viewController: UIKit.UIViewController?, customTitle: Swift.String = "请求失败") -> KzSDK_Swift.ApiListener<T>
+  @objc deinit
+}
+public class KzPlatformAppListener<T> {
+  public init(onSuccess: @escaping (T) -> Swift.Void, onFail: @escaping (T) -> Swift.Void)
+  @objc deinit
+}
+extension ApiAction {
+  final public class GetBonus {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setStartDate(_ value: Foundation.Date?) -> KzSDK_Swift.ApiAction.GetBonus
+    final public func setEndDate(_ value: Foundation.Date?) -> KzSDK_Swift.ApiAction.GetBonus
+    final public func setOffset(_ value: Swift.Int?) -> KzSDK_Swift.ApiAction.GetBonus
+    final public func setPageCount(_ value: Swift.Int?) -> KzSDK_Swift.ApiAction.GetBonus
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetBonus.Result>) -> KzSDK_Swift.ApiAction.GetBonus
+    @objc deinit
+  }
+}
+extension ApiAction.GetBonus {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetBonus.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetBonus.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetBonus.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetBonus.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetBonus.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let bonusItems: [KzSDK_Swift.ApiAction.GetBonus.Result.Body.BonusItem]?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct BonusItem : Swift.Codable {
+        public let dno: Swift.String?
+        public let gamePlatform: Swift.String?
+        public let amount: Swift.Double?
+        public let time: Foundation.Date?
+        public let type: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension KzPlatformApp {
+  final public class LD : KzSDK_Swift.KzPlatformAppProtocol {
+    final public var retryCount: Swift.Int
+    final public var gamePlatformId: Swift.String {
+      get
+      }
+    public init()
+    final public func post()
+    final public func setSiteId(_ value: Swift.String?) -> KzSDK_Swift.KzPlatformAppProtocol
+    final public func setUsername(_ value: Swift.String?) -> KzSDK_Swift.KzPlatformAppProtocol
+    final public func getAid() -> Swift.String?
+    final public func getUsername() -> Swift.String?
+    final public func addListener(_ listener: KzSDK_Swift.KzPlatformAppListener<KzSDK_Swift.KzPlatformAppResultProtocol>) -> KzSDK_Swift.KzPlatformAppProtocol
+    @objc deinit
+  }
+}
+extension KzPlatformApp.LD {
+  final public class Listener : KzSDK_Swift.KzPlatformAppListener<KzSDK_Swift.KzPlatformApp.LD.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.KzPlatformApp.LD.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.KzPlatformApp.LD.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.KzPlatformAppResultProtocol {
+    final public var body: KzSDK_Swift.KzPlatformAppResultBodyProtocol?
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.KzPlatformAppResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public let urlString: Swift.String?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class RegisterAccount {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setJoinName(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAccount
+    final public func setJoinPassword(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAccount
+    final public func setFullName(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAccount
+    final public func setAgentCode(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAccount
+    final public func setVerifyCode(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAccount
+    final public func setEmail(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAccount
+    final public func setPhone(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAccount
+    final public func setQQ(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAccount
+    final public func setBirthday(_ value: Foundation.Date?) -> KzSDK_Swift.ApiAction.RegisterAccount
+    final public func setWithdrawPassword(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAccount
+    final public func setJSessionId(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAccount
+    final public func setWeiXin(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAccount
+    final public func setSms(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAccount
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.RegisterAccount.Result>) -> KzSDK_Swift.ApiAction.RegisterAccount
+    @objc deinit
+  }
+}
+extension ApiAction.RegisterAccount {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.RegisterAccount.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.RegisterAccount.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.RegisterAccount.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.RegisterAccount.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GameTransferOnEnter {
+    final public var retryCount: Swift.Int
+    public static let TRANSFER_BACK: Swift.String
+    public init()
+    final public func post()
+    final public func setGamePlatformAccountId(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.GameTransferOnEnter
+    final public func setTransferAmount(_ value: Swift.Double?) -> KzSDK_Swift.ApiAction.GameTransferOnEnter
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GameTransferOnEnter.Result>) -> KzSDK_Swift.ApiAction.GameTransferOnEnter
+    @objc deinit
+  }
+}
+extension ApiAction.GameTransferOnEnter {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GameTransferOnEnter.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GameTransferOnEnter.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GameTransferOnEnter.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GameTransferOnEnter.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetKey {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetKey.Result>) -> KzSDK_Swift.ApiAction.GetKey
+    @objc deinit
+  }
+}
+extension ApiAction.GetKey {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetKey.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetKey.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetKey.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetKey.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetKey.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let publicKeyString: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetAllGamePlatformBalance {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetAllGamePlatformBalance.Result>) -> KzSDK_Swift.ApiAction.GetAllGamePlatformBalance
+    @objc deinit
+  }
+}
+extension ApiAction.GetAllGamePlatformBalance {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetAllGamePlatformBalance.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetAllGamePlatformBalance.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetAllGamePlatformBalance.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetAllGamePlatformBalance.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetAllGamePlatformBalance.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let balances: [KzSDK_Swift.ApiAction.GetAllGamePlatformBalance.Result.Body.Balance]?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct Balance : Swift.Codable {
+        public let gamePlatformId: Swift.String?
+        public let value: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension KzPlatformApp {
+  final public class AllBet : KzSDK_Swift.KzPlatformAppProtocol {
+    final public var retryCount: Swift.Int
+    final public var gamePlatformId: Swift.String {
+      get
+      }
+    public init()
+    final public func post()
+    final public func setSiteId(_ value: Swift.String?) -> KzSDK_Swift.KzPlatformAppProtocol
+    final public func setUsername(_ value: Swift.String?) -> KzSDK_Swift.KzPlatformAppProtocol
+    final public func getAid() -> Swift.String?
+    final public func getUsername() -> Swift.String?
+    final public func addListener(_ listener: KzSDK_Swift.KzPlatformAppListener<KzSDK_Swift.KzPlatformAppResultProtocol>) -> KzSDK_Swift.KzPlatformAppProtocol
+    @objc deinit
+  }
+}
+extension KzPlatformApp.AllBet {
+  final public class Listener : KzSDK_Swift.KzPlatformAppListener<KzSDK_Swift.KzPlatformApp.AllBet.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.KzPlatformApp.AllBet.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.KzPlatformApp.AllBet.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.KzPlatformAppResultProtocol {
+    final public var body: KzSDK_Swift.KzPlatformAppResultBodyProtocol?
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.KzPlatformAppResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public let urlString: Swift.String?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension KzPlatformApp {
+  final public class EBet : KzSDK_Swift.KzPlatformAppProtocol {
+    final public var retryCount: Swift.Int
+    final public var gamePlatformId: Swift.String {
+      get
+      }
+    public init()
+    final public func post()
+    final public func setSiteId(_ value: Swift.String?) -> KzSDK_Swift.KzPlatformAppProtocol
+    final public func setUsername(_ value: Swift.String?) -> KzSDK_Swift.KzPlatformAppProtocol
+    final public func getAid() -> Swift.String?
+    final public func getUsername() -> Swift.String?
+    final public func addListener(_ listener: KzSDK_Swift.KzPlatformAppListener<KzSDK_Swift.KzPlatformAppResultProtocol>) -> KzSDK_Swift.KzPlatformAppProtocol
+    @objc deinit
+  }
+}
+extension KzPlatformApp.EBet {
+  final public class Listener : KzSDK_Swift.KzPlatformAppListener<KzSDK_Swift.KzPlatformApp.EBet.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.KzPlatformApp.EBet.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.KzPlatformApp.EBet.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.KzPlatformAppResultProtocol {
+    final public var body: KzSDK_Swift.KzPlatformAppResultBodyProtocol?
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.KzPlatformAppResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public let urlString: Swift.String?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class ChangePassword {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setPassword(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ChangePassword
+    final public func setNewPassword(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ChangePassword
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.ChangePassword.Result>) -> KzSDK_Swift.ApiAction.ChangePassword
+    @objc deinit
+  }
+}
+extension ApiAction.ChangePassword {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.ChangePassword.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.ChangePassword.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.ChangePassword.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.ChangePassword.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class ResetPasswordByPhone {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setName(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ResetPasswordByPhone
+    final public func setPassword(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ResetPasswordByPhone
+    final public func setValidateCode(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ResetPasswordByPhone
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.ResetPasswordByPhone.Result>) -> KzSDK_Swift.ApiAction.ResetPasswordByPhone
+    @objc deinit
+  }
+}
+extension ApiAction.ResetPasswordByPhone {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.ResetPasswordByPhone.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.ResetPasswordByPhone.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.ResetPasswordByPhone.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.ResetPasswordByPhone.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiPEVerifyResultData? {
+        get
+        }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class RequestResetPasswordByEmail {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setName(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RequestResetPasswordByEmail
+    final public func setEmail(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RequestResetPasswordByEmail
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.RequestResetPasswordByEmail.Result>) -> KzSDK_Swift.ApiAction.RequestResetPasswordByEmail
+    @objc deinit
+  }
+}
+extension ApiAction.RequestResetPasswordByEmail {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.RequestResetPasswordByEmail.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.RequestResetPasswordByEmail.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.RequestResetPasswordByEmail.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.RequestResetPasswordByEmail.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiRequestEmailVerifyResultData? {
+        get
+        }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class DeleteMessage {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setMessageIds(_ value: [Swift.String]) -> KzSDK_Swift.ApiAction.DeleteMessage
+    final public func addMessageId(_ value: Swift.String) -> KzSDK_Swift.ApiAction.DeleteMessage
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.DeleteMessage.Result>) -> KzSDK_Swift.ApiAction.DeleteMessage
+    @objc deinit
+  }
+}
+extension ApiAction.DeleteMessage {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.DeleteMessage.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.DeleteMessage.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.DeleteMessage.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.DeleteMessage.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetDepositOption {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetDepositOption.Result>) -> KzSDK_Swift.ApiAction.GetDepositOption
+    @objc deinit
+  }
+}
+extension ApiAction.GetDepositOption {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetDepositOption.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetDepositOption.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetDepositOption.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetDepositOption.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetDepositOption.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let useRotate: Swift.Bool
+        public let process: Swift.Bool
+        public let aMin: Swift.Double?
+        public let aMax: Swift.Double?
+        public let allowDeposit: Swift.Bool
+        public let atmBankPosition: Swift.Int?
+        public let isV2: Swift.Bool
+        public let atpMin: Swift.Double?
+        public let atpMax: Swift.Double?
+        public var displayItems: [KzSDK_Swift.ApiAction.GetDepositOption.Result.PaymentOption]? {
+          get
+          }
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct PayOptionSortInfo : Swift.Codable {
+        public let ptAlias: Swift.String?
+        public let displayOrder: Swift.Int?
+        public let id: Swift.String?
+        public let type: Swift.String?
+        public let image: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct PaymentTypeCategory : Swift.Codable {
+        public let optionId: Swift.String?
+        public let items: [KzSDK_Swift.ApiAction.GetDepositOption.Result.Body.PaymentType]
+        public let randomMin: Swift.Double?
+        public let randomMax: Swift.Double?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct PaymentType : Swift.Codable {
+        public let ppid: Swift.String?
+        public let code: Swift.String?
+        public let bankName: Swift.String?
+        public let ptAlias: Swift.String?
+        public let bankCss: Swift.String?
+        public let bcid: Swift.String?
+        public let bankCode: Swift.String?
+        public let logoCss: Swift.String?
+        public let sort: Swift.Int?
+        public let groupId: Swift.String?
+        public let formType: Swift.String?
+        public let v2PgInfo: KzSDK_Swift.ApiAction.GetDepositBank.Result.Body.V2PgInfo?
+        public let bank: [KzSDK_Swift.ApiAction.GetDepositBank.Result.Body.Bank]?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct PaymentAtmType : Swift.Codable {
+        public let bcid: Swift.String?
+        public let showField: Swift.String?
+        public let ptAlias: Swift.String?
+        public let bankCode: Swift.String?
+        public let accountId: Swift.String?
+        public let bankName: Swift.String?
+        public let bankCss: Swift.String?
+        public let number: Swift.String?
+        public let atmNo: Swift.String?
+        public let atmName: Swift.String?
+        public let atmBankCode: Swift.String?
+        public let atmAddr: Swift.String?
+        public let random: Swift.Int?
+        public let key: Swift.String?
+        public let desc: Swift.String?
+        public let qrCode: Swift.String?
+        public var min: Swift.Double? {
+          get
+          }
+        public var max: Swift.Double? {
+          get
+          }
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct SortSetting : Swift.Codable {
+        public let name: Swift.String?
+        public let option: Swift.String?
+        public let order: Swift.Int?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct AtmSortSetting : Swift.Codable {
+        public let option: Swift.String?
+        public let items: [KzSDK_Swift.ApiAction.GetDepositOption.Result.Body.AtmSortSetting.AtmSortSettingItem]?
+        public struct AtmSortSettingItem : Swift.Codable {
+          public let bcid: Swift.String?
+          public let order: Swift.Int?
+          public init(from decoder: Swift.Decoder) throws
+          public func encode(to encoder: Swift.Encoder) throws
+        }
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetActivitiesInfo {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetActivitiesInfo.Result>) -> KzSDK_Swift.ApiAction.GetActivitiesInfo
+    @objc deinit
+  }
+}
+extension ApiAction.GetActivitiesInfo {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetActivitiesInfo.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetActivitiesInfo.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetActivitiesInfo.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetActivitiesInfo.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetActivitiesInfo.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let activities: [KzSDK_Swift.ApiAction.GetActivitiesInfo.Result.Body.Activity]?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct Activity : Swift.Codable {
+        public let description: Swift.String?
+        public let id: Swift.String?
+        public let name: Swift.String?
+        public let typeId: Swift.String?
+        public let typeName: Swift.String?
+        public let coverImage: Swift.String?
+        public let coverImageMobile: Swift.String?
+        public let redirectTo: Swift.String?
+        public let redirectUrl: Swift.String?
+        public let showText: Swift.String?
+        public let canJoin: Swift.Bool
+        public let displayOrder: Swift.Int?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class ResetPasswordByEmail {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setName(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ResetPasswordByEmail
+    final public func setPassword(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ResetPasswordByEmail
+    final public func setValidateCode(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ResetPasswordByEmail
+    final public func setToken(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ResetPasswordByEmail
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.ResetPasswordByEmail.Result>) -> KzSDK_Swift.ApiAction.ResetPasswordByEmail
+    @objc deinit
+  }
+}
+extension ApiAction.ResetPasswordByEmail {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.ResetPasswordByEmail.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.ResetPasswordByEmail.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.ResetPasswordByEmail.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.ResetPasswordByEmail.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiPEVerifyResultData? {
+        get
+        }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetGPByPlatform {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func getCacheData(getSubGame: Swift.Bool) throws -> KzSDK_Swift.ApiAction.GetGPByPlatform.Result.Body.Data
+    final public func setIncludeSubGames(_ value: Swift.Bool) -> KzSDK_Swift.ApiAction.GetGPByPlatform
+    final public func loadCacheIfPossible(_ value: Swift.Bool) -> KzSDK_Swift.ApiAction.GetGPByPlatform
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetGPByPlatform.Result>) -> KzSDK_Swift.ApiAction.GetGPByPlatform
+    @objc deinit
+  }
+}
+extension ApiAction.GetGPByPlatform {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetGPByPlatform.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetGPByPlatform.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetGPByPlatform.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : Swift.Codable, KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetGPByPlatform.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetGPByPlatform.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public var gamePlatformTypes: [KzSDK_Swift.ApiAction.GetGPByPlatform.Result.Body.GamePlatformType]? {
+          get
+          }
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      final public class GamePlatformType : Swift.Codable, KzSDK_Swift.ReflectedStringConvertible {
+        final public let typeId: Swift.String?
+        final public let typeName: Swift.String?
+        final public var gamePlatforms: [KzSDK_Swift.ApiAction.GetGPByPlatform.Result.Body.GamePlatform]? {
+          get
+          }
+        required public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+        @objc deinit
+      }
+      public class GamePlatform : Swift.Codable, KzSDK_Swift.ReflectedStringConvertible {
+        final public let gamePlatformAccountid: Swift.String?
+        final public let gamePlatformType: Swift.String?
+        final public let appUrl: Swift.String?
+        final public let gamePlatformEnglishName: Swift.String?
+        final public let imageIos: Swift.String?
+        final public let displayOrder: Swift.Int?
+        final public let gamePlatformId: Swift.String?
+        public var gamePlatformName: Swift.String? {
+          get
+          }
+        final public let enableIosH5: Swift.Bool
+        final public let inMaintenance: Swift.Bool
+        final public let useWebkit: Swift.Bool
+        final public let enableIosApp: Swift.Bool
+        final public let frameIcons: Swift.Int?
+        public var categories: [KzSDK_Swift.ApiAction.GetGPByPlatform.Result.Body.GameCategory]? {
+          get
+          }
+        public var children: [KzSDK_Swift.ApiAction.GetGPByPlatform.Result.Body.ChildGame]? {
+          get
+          }
+        public var childGroups: [KzSDK_Swift.ApiAction.GetGPByPlatform.Result.Body.ChildGroup]? {
+          get
+          }
+        final public let maintainStart: Swift.String?
+        final public let maintainEnd: Swift.String?
+        public var isCustomGame: Swift.Bool {
+          get
+        }
+        required public init(from decoder: Swift.Decoder) throws
+        @objc deinit
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public class CustomGamePlatform : KzSDK_Swift.ApiAction.GetGPByPlatform.Result.Body.GamePlatform {
+        public var customGamePlatformName: Swift.String? {
+          get
+        }
+        public var customGamePlatformEnglishName: Swift.String? {
+          get
+        }
+        final public let banner: Swift.String?
+        public var enableIos: Swift.Bool {
+          get
+        }
+        public var customGamePlatformId: Swift.String? {
+          get
+        }
+        final public let isBigGame: Swift.Bool
+        required public init(from decoder: Swift.Decoder) throws
+        @objc deinit
+      }
+      final public class GameCategory : Swift.Codable, KzSDK_Swift.ReflectedStringConvertible {
+        final public let childCategoryId: Swift.String?
+        final public let gamePlatformId: Swift.String?
+        final public let childGroupId: Swift.String?
+        final public let categoryName: Swift.String?
+        final public let categoryNameEn: Swift.String?
+        final public let categoryNameTh: Swift.String?
+        final public let image: Swift.String?
+        final public let displayOrder: Swift.Int?
+        required public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+        @objc deinit
+      }
+      final public class ChildGame : Swift.Codable, KzSDK_Swift.ReflectedStringConvertible {
+        final public let gamePlatformChildId: Swift.String?
+        final public let gamePlatformId: Swift.String?
+        final public let childGroupId: Swift.String?
+        final public var childName: Swift.String? {
+          get
+          }
+        final public var childNameEn: Swift.String? {
+          get
+          }
+        final public var childNameTh: Swift.String? {
+          get
+          }
+        final public var appUrlSuffix: Swift.String? {
+          get
+          }
+        final public var image: Swift.String? {
+          get
+          }
+        final public var displayOrder: Swift.Int? {
+          get
+          }
+        final public var enableIos: Swift.Bool {
+          get
+          }
+        final public let useWebkit: Swift.Bool
+        final public let categories: [Swift.String]?
+        final public let children: [KzSDK_Swift.ApiAction.GetGPByPlatform.Result.Body.ChildGame]?
+        required public init(from decoder: Swift.Decoder) throws
+        @objc deinit
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      final public class ChildGroup : Swift.Codable, KzSDK_Swift.ReflectedStringConvertible {
+        final public let childGroupId: Swift.String?
+        final public let gamePlatformId: Swift.String?
+        final public let childGroupName: Swift.String?
+        final public let image: Swift.String?
+        final public let displayOrder: Swift.Int?
+        final public let children: [KzSDK_Swift.ApiAction.GetGPByPlatform.Result.Body.ChildGame]?
+        required public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+        @objc deinit
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+    public init(from decoder: Swift.Decoder) throws
+    public func encode(to encoder: Swift.Encoder) throws
+  }
+}
+extension ApiAction {
+  final public class Logout {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.Logout.Result>) -> KzSDK_Swift.ApiAction.Logout
+    @objc deinit
+  }
+}
+extension ApiAction.Logout {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.Logout.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.Logout.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.Logout.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.Logout.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetWebsiteConfig {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetWebsiteConfig.Result>) -> KzSDK_Swift.ApiAction.GetWebsiteConfig
+    @objc deinit
+  }
+}
+extension ApiAction.GetWebsiteConfig {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetWebsiteConfig.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetWebsiteConfig.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetWebsiteConfig.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetWebsiteConfig.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetWebsiteConfig.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let configs: [KzSDK_Swift.ApiAction.GetWebsiteConfig.Result.Body.Config]?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct Config : Swift.Codable {
+        public let itemKey: Swift.String?
+        public let itemValue: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+public protocol ApiResultProtocol : KzSDK_Swift.ReflectedStringConvertible {
+  init(jsonData: Foundation.Data?)
+  var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? { get }
+}
+public protocol ApiResultBodyProtocol {
+  var status: Swift.Int? { get }
+  var msg: Swift.String? { get }
+  var apiPath: Swift.String? { get }
+  var query: Swift.String? { get }
+  var createdDate: Swift.Int? { get }
+  var updatedDate: Swift.Int? { get }
+}
+extension KzPlatformApp {
+  final public class AG : KzSDK_Swift.KzPlatformAppProtocol {
+    final public var retryCount: Swift.Int
+    final public var gamePlatformId: Swift.String {
+      get
+      }
+    public init()
+    final public func post()
+    final public func setSiteId(_ value: Swift.String?) -> KzSDK_Swift.KzPlatformAppProtocol
+    final public func setUsername(_ value: Swift.String?) -> KzSDK_Swift.KzPlatformAppProtocol
+    final public func getAid() -> Swift.String?
+    final public func getUsername() -> Swift.String?
+    final public func addListener(_ listener: KzSDK_Swift.KzPlatformAppListener<KzSDK_Swift.KzPlatformAppResultProtocol>) -> KzSDK_Swift.KzPlatformAppProtocol
+    @objc deinit
+  }
+}
+extension KzPlatformApp.AG {
+  final public class Listener : KzSDK_Swift.KzPlatformAppListener<KzSDK_Swift.KzPlatformApp.AG.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.KzPlatformApp.AG.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.KzPlatformApp.AG.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.KzPlatformAppResultProtocol {
+    final public var body: KzSDK_Swift.KzPlatformAppResultBodyProtocol?
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.KzPlatformAppResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public let urlString: Swift.String?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetMessageHistory {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setStartDate(_ value: Foundation.Date?) -> KzSDK_Swift.ApiAction.GetMessageHistory
+    final public func setEndDate(_ value: Foundation.Date?) -> KzSDK_Swift.ApiAction.GetMessageHistory
+    final public func setOffset(_ value: Swift.Int?) -> KzSDK_Swift.ApiAction.GetMessageHistory
+    final public func setPageCount(_ value: Swift.Int?) -> KzSDK_Swift.ApiAction.GetMessageHistory
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetMessageHistory.Result>) -> KzSDK_Swift.ApiAction.GetMessageHistory
+    @objc deinit
+  }
+}
+extension ApiAction.GetMessageHistory {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetMessageHistory.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetMessageHistory.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetMessageHistory.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetMessageHistory.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetMessageHistory.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let history: [KzSDK_Swift.ApiAction.GetMessageHistory.Result.Body.History]?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct History : Swift.Codable {
+        public let id: Swift.String?
+        public let readStatus: Swift.Bool
+        public let content: Swift.String?
+        public let title: Swift.String?
+        public let createdDate: Foundation.Date?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class SubmitWithdraw {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setWithdrawBank(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.SubmitWithdraw
+    final public func setAmount(_ value: Swift.Double?) -> KzSDK_Swift.ApiAction.SubmitWithdraw
+    final public func setWithdrawPassword(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.SubmitWithdraw
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.SubmitWithdraw.Result>) -> KzSDK_Swift.ApiAction.SubmitWithdraw
+    @objc deinit
+  }
+}
+extension ApiAction.SubmitWithdraw {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.SubmitWithdraw.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.SubmitWithdraw.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.SubmitWithdraw.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.SubmitWithdraw.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetBasicKey {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetBasicKey.Result>) -> KzSDK_Swift.ApiAction.GetBasicKey
+    @objc deinit
+  }
+}
+extension ApiAction.GetBasicKey {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetBasicKey.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetBasicKey.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetBasicKey.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetBasicKey.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetBasicKey.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let basicKeyString: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetGamePlatformAccounts {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetGamePlatformAccounts.Result>) -> KzSDK_Swift.ApiAction.GetGamePlatformAccounts
+    @objc deinit
+  }
+}
+extension ApiAction.GetGamePlatformAccounts {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetGamePlatformAccounts.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetGamePlatformAccounts.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetGamePlatformAccounts.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetGamePlatformAccounts.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetGamePlatformAccounts.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let accounts: [KzSDK_Swift.ApiAction.GetGamePlatformAccounts.Result.Body.GamePlatformAccount]?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct GamePlatformAccount : Swift.Codable {
+        public let id: Swift.String?
+        public let image: Swift.String?
+        public let name: Swift.String?
+        public let displayOrder: Swift.String?
+        public let status: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetRedPocketInfo {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetRedPocketInfo.Result>) -> KzSDK_Swift.ApiAction.GetRedPocketInfo
+    @objc deinit
+  }
+}
+extension ApiAction.GetRedPocketInfo {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetRedPocketInfo.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetRedPocketInfo.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetRedPocketInfo.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetRedPocketInfo.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetRedPocketInfo.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public var playerBalance: Swift.Double?
+        public let isActivityBalance: Swift.Bool
+        public let isActiveRedPocketTime: Swift.Bool
+        public let hasRedPocketActivity: Swift.Bool
+        public let nextEvent: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetWithdrawBanksList {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetWithdrawBanksList.Result>) -> KzSDK_Swift.ApiAction.GetWithdrawBanksList
+    @objc deinit
+  }
+}
+extension ApiAction.GetWithdrawBanksList {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetWithdrawBanksList.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetWithdrawBanksList.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetWithdrawBanksList.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetWithdrawBanksList.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetWithdrawBanksList.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let withdrawPassword: Swift.Bool
+        public let process: Swift.String?
+        public let withdrawInfo: Swift.String?
+        public let withdrawMin: Swift.Double?
+        public let withdrawMax: Swift.Double?
+        public let withdrawPendingLimit: Swift.Int?
+        public let withdrawBanks: [KzSDK_Swift.ApiAction.GetWithdrawBanksList.Result.Body.WithdrawBank]?
+        public let banks: [KzSDK_Swift.ApiAction.GetWithdrawBanksList.Result.Body.Bank]?
+        public let playerTodayWithdrawAmount: Swift.Double?
+        public let playerTodayWithdrawCount: Swift.Int?
+        public let withdrawDayMaxAmount: Swift.Double?
+        public let withdrawDayMaxCount: Swift.Int?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct WithdrawBank : Swift.Codable {
+        public let bankCode: Swift.String?
+        public let bankName: Swift.String?
+        public let cardNumber: Swift.String?
+        public let withdrawBankId: Swift.String?
+        public let bankCss: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct Bank : Swift.Codable {
+        public let bankCode: Swift.String?
+        public let bankName: Swift.String?
+        public let bankNameEN: Swift.String?
+        public let bankCss: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class ChangeWithdrawPassword {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setPassword(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ChangeWithdrawPassword
+    final public func setNewPassword(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ChangeWithdrawPassword
+    final public func setLoginPassword(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ChangeWithdrawPassword
+    final public func setSiteId(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ChangeWithdrawPassword
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.ChangeWithdrawPassword.Result>) -> KzSDK_Swift.ApiAction.ChangeWithdrawPassword
+    @objc deinit
+  }
+}
+extension ApiAction.ChangeWithdrawPassword {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.ChangeWithdrawPassword.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.ChangeWithdrawPassword.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.ChangeWithdrawPassword.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.ChangeWithdrawPassword.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetWithdrawHistory {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setStartDate(_ value: Foundation.Date?) -> KzSDK_Swift.ApiAction.GetWithdrawHistory
+    final public func setEndDate(_ value: Foundation.Date?) -> KzSDK_Swift.ApiAction.GetWithdrawHistory
+    final public func setOffset(_ value: Swift.Int?) -> KzSDK_Swift.ApiAction.GetWithdrawHistory
+    final public func setPageCount(_ value: Swift.Int?) -> KzSDK_Swift.ApiAction.GetWithdrawHistory
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetWithdrawHistory.Result>) -> KzSDK_Swift.ApiAction.GetWithdrawHistory
+    @objc deinit
+  }
+}
+extension ApiAction.GetWithdrawHistory {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetWithdrawHistory.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetWithdrawHistory.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetWithdrawHistory.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetWithdrawHistory.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetWithdrawHistory.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let history: [KzSDK_Swift.ApiAction.GetWithdrawHistory.Result.Body.History]?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct History : Swift.Codable {
+        public let actualAmount: Swift.Double?
+        public let requestAmount: Swift.Double?
+        public let statusCode: Swift.Int?
+        public let dno: Swift.String?
+        public let createdDate: Foundation.Date?
+        public let withdrawFee: Swift.Double?
+        public let status: Swift.String?
+        public let cardNum: Swift.String?
+        public let bankName: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+final public class KzPlatformApp {
+  public static func getInstance(gamePlatformId gpid: Swift.String) -> KzSDK_Swift.KzPlatformAppProtocol?
+  @objc deinit
+}
+public protocol KzPlatformAppProtocol : KzSDK_Swift.KzApi {
+  var gamePlatformId: Swift.String { get }
+  func post()
+  func setSiteId(_ value: Swift.String?) -> KzSDK_Swift.KzPlatformAppProtocol
+  func setUsername(_ value: Swift.String?) -> KzSDK_Swift.KzPlatformAppProtocol
+  func getAid() -> Swift.String?
+  func getUsername() -> Swift.String?
+  func addListener(_: KzSDK_Swift.KzPlatformAppListener<KzSDK_Swift.KzPlatformAppResultProtocol>) -> KzSDK_Swift.KzPlatformAppProtocol
+}
+public protocol KzPlatformAppResultProtocol : KzSDK_Swift.ReflectedStringConvertible {
+  var body: KzSDK_Swift.KzPlatformAppResultBodyProtocol? { get }
+}
+public protocol KzPlatformAppResultBodyProtocol {
+  var status: Swift.Int? { get }
+  var msg: Swift.String? { get }
+  var apiPath: Swift.String? { get }
+  var query: Swift.String? { get }
+  var createdDate: Swift.Int? { get }
+  var updatedDate: Swift.Int? { get }
+  var urlString: Swift.String? { get }
+}
+extension ApiAction {
+  final public class GetDownloadAppList {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetDownloadAppList.Result>) -> KzSDK_Swift.ApiAction.GetDownloadAppList
+    @objc deinit
+  }
+}
+extension ApiAction.GetDownloadAppList {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetDownloadAppList.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetDownloadAppList.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetDownloadAppList.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetDownloadAppList.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetDownloadAppList.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let appList: [KzSDK_Swift.ApiAction.GetDownloadAppList.Result.Body.App]?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct App : Swift.Codable {
+        public let gamePlatformId: Swift.String?
+        public let gamePlatformName: Swift.String?
+        public let imageIos: Swift.String?
+        public let urlIos: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class IsUserNameExist {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setName(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.IsUserNameExist
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.IsUserNameExist.Result>) -> KzSDK_Swift.ApiAction.IsUserNameExist
+    @objc deinit
+  }
+}
+extension ApiAction.IsUserNameExist {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.IsUserNameExist.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.IsUserNameExist.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.IsUserNameExist.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.IsUserNameExist.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public let data: KzSDK_Swift.ApiAction.IsUserNameExist.Result.Body.Data?
+      public struct Data : Swift.Codable {
+        public let isExist: Swift.Bool
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetDepositBank {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setPpid(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.GetDepositBank
+    final public func setOption(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.GetDepositBank
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetDepositBank.Result>) -> KzSDK_Swift.ApiAction.GetDepositBank
+    @objc deinit
+  }
+}
+extension ApiAction.GetDepositBank {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetDepositBank.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetDepositBank.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetDepositBank.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetDepositBank.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetDepositBank.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let useRotate: Swift.Bool
+        public let randomMin: Swift.Double?
+        public let randomMax: Swift.Double?
+        public let curCount: Swift.Int?
+        public let checkPgm: Swift.Int?
+        public let checkGroup: Swift.Int?
+        public let allowDeposit: Swift.Bool
+        public let v2PgInfo: KzSDK_Swift.ApiAction.GetDepositBank.Result.Body.V2PgInfo?
+        public let aMin: Swift.Double?
+        public let aMax: Swift.Double?
+        public let randomType: Swift.Int?
+        public let fixAmountArray: [KzSDK_Swift.ApiAction.GetDepositBank.Result.Body.FixAmountSetting]?
+        public let bank: [KzSDK_Swift.ApiAction.GetDepositBank.Result.Body.Bank]?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct Bank : Swift.Codable {
+        public let key: Swift.String?
+        public let name: Swift.String?
+        public let css: Swift.String?
+        public let type: Swift.String?
+        public let ppid: Swift.String?
+        public func encode(to encoder: Swift.Encoder) throws
+        public init(from decoder: Swift.Decoder) throws
+      }
+      public struct V2PgInfo : Swift.Codable {
+        public let min: Swift.Double?
+        public let max: Swift.Double?
+        public let random: Swift.Int?
+        public var fixAmount: [Swift.Double]? {
+          get
+          }
+        public let payName: Swift.String?
+        public let ppid: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct FixAmountSetting : Swift.Codable {
+        public let option: Swift.String?
+        public let items: [Swift.String]?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetClientInfo {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func getCacheData() throws -> KzSDK_Swift.ApiAction.GetClientInfo.Result.Body.Data
+    final public func loadCacheIfPossible(_ value: Swift.Bool) -> KzSDK_Swift.ApiAction.GetClientInfo
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetClientInfo.Result>) -> KzSDK_Swift.ApiAction.GetClientInfo
+    @objc deinit
+  }
+}
+extension ApiAction.GetClientInfo {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetClientInfo.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetClientInfo.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetClientInfo.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetClientInfo.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetClientInfo.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let announcement: Swift.String?
+        public let banners: [Swift.String]?
+        public let siteId: Swift.String?
+        public let siteLogoB: Swift.String?
+        public let siteLogoS: Swift.String?
+        public let siteLogoSA: Swift.String?
+        public let siteLogoSimple: Swift.String?
+        public let siteName: Swift.String?
+        public let supportUrl: Swift.String?
+        public let domainName: Swift.String?
+        public let useBetterUrl: Swift.Bool
+        public let redPocketImageUrl: Swift.String?
+        public let hasRedPocket: Swift.Bool
+        public let allowUserEditProfile: Swift.Bool
+        public let mobilePopUp: Swift.String?
+        public let wc301: Swift.String?
+        public let wc302: Swift.String?
+        public let wc303: Swift.String?
+        public let wc304: Swift.String?
+        public let wc305: Swift.String?
+        public let wc306: Swift.String?
+        public let isWithdrawPasswordOn: Swift.Bool
+        public let registerMobileVerify: Swift.Bool
+        public let withdrawalMobileVerify: Swift.Bool
+        public let addBankCardSmsVerify: Swift.Bool
+        public let allowSendSms: Swift.Bool
+        public let allowSendEmail: Swift.Bool
+        public let shouldCheckMobileVerified: Swift.Bool
+        public let allowUploadDepositCredential: Swift.Bool
+        public let gameTransferPopUp: Swift.Bool
+        public let bannerSourceApi: KzSDK_Swift.ApiAction.GetClientInfo.Result.Body.Data.BannerType
+        public let viewMode: KzSDK_Swift.ApiAction.GetClientInfo.Result.Body.Data.ViewMode
+        public let clientTheme: [KzSDK_Swift.ApiAction.GetClientInfo.Result.Body.Data.ClientTheme]
+        public init(from decoder: Swift.Decoder) throws
+        public enum BannerType : Swift.String, Swift.Codable {
+          case activitiesInfo
+          case clientInfo
+          public typealias RawValue = Swift.String
+          public init?(rawValue: Swift.String)
+          public var rawValue: Swift.String {
+            get
+          }
+        }
+        public enum ViewMode : Swift.String, Swift.Codable {
+          case white
+          case black
+          public typealias RawValue = Swift.String
+          public init?(rawValue: Swift.String)
+          public var rawValue: Swift.String {
+            get
+          }
+        }
+        public struct ClientTheme : Swift.Codable {
+          public let colorId: Swift.String?
+          public let rgbWhite: Swift.String?
+          public let rgbBlack: Swift.String?
+          public init(from decoder: Swift.Decoder) throws
+          public func encode(to encoder: Swift.Encoder) throws
+        }
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class IsAgentUserNameExist {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setName(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.IsAgentUserNameExist
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.IsAgentUserNameExist.Result>) -> KzSDK_Swift.ApiAction.IsAgentUserNameExist
+    @objc deinit
+  }
+}
+extension ApiAction.IsAgentUserNameExist {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.IsAgentUserNameExist.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.IsAgentUserNameExist.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.IsAgentUserNameExist.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.IsAgentUserNameExist.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public let data: KzSDK_Swift.ApiAction.IsAgentUserNameExist.Result.Body.Data?
+      public struct Data : Swift.Codable {
+        public let isExist: Swift.Bool
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+public protocol ReflectedStringConvertible : Swift.CustomStringConvertible {
+}
+extension ReflectedStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension ApiAction {
+  final public class EditMemberInfo {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setEmail(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.EditMemberInfo
+    final public func setMobile(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.EditMemberInfo
+    final public func setQQ(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.EditMemberInfo
+    final public func setBirthday(_ value: Foundation.Date?) -> KzSDK_Swift.ApiAction.EditMemberInfo
+    final public func setWeixin(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.EditMemberInfo
+    final public func setRealName(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.EditMemberInfo
+    final public func setNickName(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.EditMemberInfo
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.EditMemberInfo.Result>) -> KzSDK_Swift.ApiAction.EditMemberInfo
+    @objc deinit
+  }
+}
+extension ApiAction.EditMemberInfo {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.EditMemberInfo.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.EditMemberInfo.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.EditMemberInfo.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.EditMemberInfo.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class TransferGp {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setFromGamePlatformAccountId(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.TransferGp
+    final public func setToGamePlatformAccountId(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.TransferGp
+    final public func setTransferAmount(_ value: Swift.Double?) -> KzSDK_Swift.ApiAction.TransferGp
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.TransferGp.Result>) -> KzSDK_Swift.ApiAction.TransferGp
+    @objc deinit
+  }
+}
+extension ApiAction.TransferGp {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.TransferGp.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.TransferGp.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.TransferGp.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.TransferGp.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+public struct ApiPEVerifyResultData : Swift.Codable {
+  public let message: Swift.String?
+  public let status: Swift.Int?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension ApiAction {
+  final public class RegisterAgentAccount {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setReferAgentCode(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAgentAccount
+    final public func setAgentName(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAgentAccount
+    final public func setPhone(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAgentAccount
+    final public func setPassword(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAgentAccount
+    final public func setEmail(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAgentAccount
+    final public func setQQ(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAgentAccount
+    final public func setRealName(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAgentAccount
+    final public func setVerifyCode(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAgentAccount
+    final public func setJSessionId(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterAgentAccount
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.RegisterAgentAccount.Result>) -> KzSDK_Swift.ApiAction.RegisterAgentAccount
+    @objc deinit
+  }
+}
+extension ApiAction.RegisterAgentAccount {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.RegisterAgentAccount.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.RegisterAgentAccount.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.RegisterAgentAccount.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.RegisterAgentAccount.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class ResetPasswordVerifyEmailCode {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setName(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ResetPasswordVerifyEmailCode
+    final public func setEmail(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ResetPasswordVerifyEmailCode
+    final public func setValidateCode(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ResetPasswordVerifyEmailCode
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.ResetPasswordVerifyEmailCode.Result>) -> KzSDK_Swift.ApiAction.ResetPasswordVerifyEmailCode
+    @objc deinit
+  }
+}
+extension ApiAction.ResetPasswordVerifyEmailCode {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.ResetPasswordVerifyEmailCode.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.ResetPasswordVerifyEmailCode.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.ResetPasswordVerifyEmailCode.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.ResetPasswordVerifyEmailCode.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiPEVerifyResultData? {
+        get
+        }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetActivitiesContent {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setActivityId(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.GetActivitiesContent
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetActivitiesContent.Result>) -> KzSDK_Swift.ApiAction.GetActivitiesContent
+    @objc deinit
+  }
+}
+extension ApiAction.GetActivitiesContent {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetActivitiesContent.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetActivitiesContent.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetActivitiesContent.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetActivitiesContent.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetActivitiesContent.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let html: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class RedeemRedPocket {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.RedeemRedPocket.Result>) -> KzSDK_Swift.ApiAction.RedeemRedPocket
+    @objc deinit
+  }
+}
+extension ApiAction.RedeemRedPocket {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.RedeemRedPocket.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.RedeemRedPocket.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.RedeemRedPocket.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.RedeemRedPocket.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.RedeemRedPocket.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let award: Swift.Double?
+        public let balance: Swift.Double?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class RegisterSms {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setUsername(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterSms
+    final public func setPhone(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RegisterSms
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.RegisterSms.Result>) -> KzSDK_Swift.ApiAction.RegisterSms
+    @objc deinit
+  }
+}
+extension ApiAction.RegisterSms {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.RegisterSms.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.RegisterSms.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.RegisterSms.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.RegisterSms.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.RegisterSms.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let response: KzSDK_Swift.ApiAction.RegisterSms.Result.Body.Response?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct Response : Swift.Codable {
+        public let smsStatus: Swift.String?
+        public let interval: Swift.Int?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class EditAvatar {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setPlayerId(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.EditAvatar
+    final public func setAvatarId(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.EditAvatar
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.EditAvatar.Result>) -> KzSDK_Swift.ApiAction.EditAvatar
+    @objc deinit
+  }
+}
+extension ApiAction.EditAvatar {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.EditAvatar.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.EditAvatar.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.EditAvatar.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.EditAvatar.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+final public class KzWebViewUtil {
+  public static func loadRequest(_ webView: UIKit.UIWebView, url: Foundation.URL?, siteId: Swift.String) -> Swift.Bool
+  public static func loadRequest(_ webView: WebKit.WKWebView, url: Foundation.URL?, siteId: Swift.String) -> Swift.Bool
+  public static func defaultWKWebView(frame: CoreGraphics.CGRect) -> WebKit.WKWebView
+  @objc deinit
+}
+extension ApiAction {
+  final public class AddBankCard {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setBankCode(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.AddBankCard
+    final public func setRegisteredName(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.AddBankCard
+    final public func setCardNumber(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.AddBankCard
+    final public func setBranchName(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.AddBankCard
+    final public func setMobileCode(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.AddBankCard
+    final public func setMobileNo(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.AddBankCard
+    final public func setNeedSms(_ value: Swift.Bool) -> KzSDK_Swift.ApiAction.AddBankCard
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.AddBankCard.Result>) -> KzSDK_Swift.ApiAction.AddBankCard
+    @objc deinit
+  }
+}
+extension ApiAction.AddBankCard {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.AddBankCard.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.AddBankCard.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.AddBankCard.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.AddBankCard.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetMemberInfo {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetMemberInfo.Result>) -> KzSDK_Swift.ApiAction.GetMemberInfo
+    @objc deinit
+  }
+}
+extension ApiAction.GetMemberInfo {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetMemberInfo.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetMemberInfo.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetMemberInfo.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetMemberInfo.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetMemberInfo.Result.Body.MemberInfo? {
+        get
+        }
+      public struct MemberInfo : Swift.Codable {
+        public let birthday: Swift.String?
+        public let qq: Swift.String?
+        public let message: Swift.Int?
+        public let realName: Swift.String?
+        public let balance: Swift.Double?
+        public let phone: Swift.String?
+        public let name: Swift.String?
+        public let registrationDate: Foundation.Date?
+        public let joinDays: Swift.Int?
+        public let playerName: Swift.String?
+        public let hasWithdrawPassword: Swift.Bool
+        public let email: Swift.String?
+        public let playerId: Swift.String?
+        public let weixin: Swift.String?
+        public let displayGroupName: Swift.String?
+        public let shouldDisplayGroupName: Swift.Bool
+        public let forceChangePassword: Swift.Bool
+        public let lastRakeBack: Swift.Double?
+        public let lastBouns: Swift.Double?
+        public let withdrawFrozenAmount: Swift.Double?
+        public let mobileVerified: Swift.Bool
+        public let emailVerified: Swift.Bool
+        public let avatarId: Swift.String?
+        public let vc: Swift.String?
+        public let cc: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class SubmitAtmDeposit {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setDepositUser(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.SubmitAtmDeposit
+    final public func setTransNo(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.SubmitAtmDeposit
+    final public func setBcid(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.SubmitAtmDeposit
+    final public func setAmount(_ value: Swift.Double?) -> KzSDK_Swift.ApiAction.SubmitAtmDeposit
+    final public func setDepositDate(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.SubmitAtmDeposit
+    final public func setDepositSlipBase64(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.SubmitAtmDeposit
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.SubmitAtmDeposit.Result>) -> KzSDK_Swift.ApiAction.SubmitAtmDeposit
+    @objc deinit
+  }
+}
+extension ApiAction.SubmitAtmDeposit {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.SubmitAtmDeposit.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.SubmitAtmDeposit.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.SubmitAtmDeposit.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.SubmitAtmDeposit.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class Login {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setUsername(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.Login
+    final public func setPassword(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.Login
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.Login.Result>) -> KzSDK_Swift.ApiAction.Login
+    @objc deinit
+  }
+}
+extension ApiAction.Login {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.Login.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.Login.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.Login.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.Login.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetMemberInfo.Result.Body.MemberInfo? {
+        get
+        }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+public class ApiDebugConfig {
+  @objc deinit
+}
+extension ApiAction.GetDepositOption.Result {
+  public enum PaymentOptionType : Swift.String, Swift.Codable {
+    case atm, paymentGateway, qrCode
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public struct PaymentOption : Swift.Codable {
+    public let displayName: Swift.String
+    public let order: Swift.Int
+    public let image: Swift.String
+    public let items: [KzSDK_Swift.ApiAction.GetDepositOption.Result.PaymentItem]
+    public let type: KzSDK_Swift.ApiAction.GetDepositOption.Result.PaymentOptionType
+    public let randomMin: Swift.Double?
+    public let randomMax: Swift.Double?
+    public func encode(to encoder: Swift.Encoder) throws
+    public init(from decoder: Swift.Decoder) throws
+  }
+  public struct PaymentItem : Swift.Codable {
+    public let optionId: Swift.String
+    public let itemTypeId: Swift.String
+    public let displayName: Swift.String
+    public let order: Swift.Int
+    public let image: Swift.String
+    public var atmQrSetting: KzSDK_Swift.ApiAction.GetDepositOption.Result.Body.PaymentAtmType? {
+      get
+      }
+    public var v2PgInfo: KzSDK_Swift.ApiAction.GetDepositBank.Result.Body.V2PgInfo? {
+      get
+      }
+    public var bank: [KzSDK_Swift.ApiAction.GetDepositBank.Result.Body.Bank]? {
+      get
+      }
+    public func encode(to encoder: Swift.Encoder) throws
+    public init(from decoder: Swift.Decoder) throws
+  }
+}
+public struct ApiRequestEmailVerifyResultData : Swift.Codable {
+  public let message: Swift.String?
+  public let status: Swift.Int?
+  public let token: Swift.String?
+  public let validDuration: Swift.Int?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension ApiAction {
+  final public class GetGameUrl {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setAppUrlPath(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.GetGameUrl
+    final public func setGamePlatformAccountId(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.GetGameUrl
+    final public func setGamePlatformId(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.GetGameUrl
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetGameUrl.Result>) -> KzSDK_Swift.ApiAction.GetGameUrl
+    @objc deinit
+  }
+}
+extension ApiAction.GetGameUrl {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetGameUrl.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetGameUrl.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetGameUrl.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetGameUrl.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public let data: KzSDK_Swift.ApiAction.GetGameUrl.Result.ResponseData?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    public struct ResponseData : Swift.Codable {
+      public let code: Swift.Int?
+      public let url: Swift.String?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class ApplyActivities {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setActivityId(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.ApplyActivities
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.ApplyActivities.Result>) -> KzSDK_Swift.ApiAction.ApplyActivities
+    @objc deinit
+  }
+}
+extension ApiAction.ApplyActivities {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.ApplyActivities.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.ApplyActivities.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.ApplyActivities.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.ApplyActivities.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class IsAccountPhoneMatch {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setName(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.IsAccountPhoneMatch
+    final public func setPhone(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.IsAccountPhoneMatch
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.IsAccountPhoneMatch.Result>) -> KzSDK_Swift.ApiAction.IsAccountPhoneMatch
+    @objc deinit
+  }
+}
+extension ApiAction.IsAccountPhoneMatch {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.IsAccountPhoneMatch.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.IsAccountPhoneMatch.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.IsAccountPhoneMatch.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.IsAccountPhoneMatch.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiPEVerifyResultData? {
+        get
+        }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetBetHistory {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setStartDate(_ value: Foundation.Date?) -> KzSDK_Swift.ApiAction.GetBetHistory
+    final public func setEndDate(_ value: Foundation.Date?) -> KzSDK_Swift.ApiAction.GetBetHistory
+    final public func setGamePlatformId(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.GetBetHistory
+    final public func setPage(_ value: Swift.Int?) -> KzSDK_Swift.ApiAction.GetBetHistory
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetBetHistory.Result>) -> KzSDK_Swift.ApiAction.GetBetHistory
+    @objc deinit
+  }
+}
+extension ApiAction.GetBetHistory {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetBetHistory.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetBetHistory.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetBetHistory.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetBetHistory.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetBetHistory.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let history: KzSDK_Swift.ApiAction.GetBetHistory.Result.Body.BetHistory?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct BetHistory : Swift.Codable {
+        public let bets: [KzSDK_Swift.ApiAction.GetBetHistory.Result.Body.History]?
+        public let totalBets: Swift.Int?
+        public let totalBetAmount: Swift.Double?
+        public let totalValidBetAmount: Swift.Double?
+        public let totalWinAmount: Swift.Double?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      final public class History : Swift.Codable, KzSDK_Swift.ReflectedStringConvertible {
+        final public let content: Swift.String?
+        final public let no: Swift.String?
+        final public let betAmount: Swift.Double?
+        final public let betTime: Foundation.Date?
+        final public let gamePlatformType: Swift.String?
+        final public let gamePlatformId: Swift.String?
+        final public let payout: Swift.Double?
+        final public let settleId: Swift.Int?
+        final public let settleName: Swift.String?
+        final public let validAmount: Swift.Double?
+        final public let winAmount: Swift.Double?
+        final public var imageUrl: Swift.String?
+        final public let comboType: Swift.String?
+        final public var detail: [KzSDK_Swift.ApiAction.GetBetHistory.Result.Body.Detail]?
+        required public init(from decoder: Swift.Decoder) throws
+        @objc deinit
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct Detail : Swift.Codable {
+        public let period: Swift.String?
+        public let betTypeDesc: Swift.String?
+        public let awayTeamHtScore: Swift.String?
+        public let handicap: Swift.String?
+        public let wagerHomeTeamScore: Swift.String?
+        public let awayTeamFtScore: Swift.String?
+        public let type: Swift.String?
+        public let homeTeamFtScore: Swift.String?
+        public let market: Swift.String?
+        public let awayTeamName: Swift.String?
+        public let selection: Swift.String?
+        public let competitionName: Swift.String?
+        public let homeTeamName: Swift.String?
+        public let odds: Swift.String?
+        public let oddType: Swift.String?
+        public let homeTeamHtScore: Swift.String?
+        public let eventDateTime: Swift.String?
+        public let wagerAwayTeamScore: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+final public class ApiAction {
+  @objc deinit
+}
+public protocol KzApi {
+  func post()
+  var retryCount: Swift.Int { get set }
+}
+extension ApiAction {
+  final public class RequestVerifyPlayerEmail {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setEmail(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RequestVerifyPlayerEmail
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.RequestVerifyPlayerEmail.Result>) -> KzSDK_Swift.ApiAction.RequestVerifyPlayerEmail
+    @objc deinit
+  }
+}
+extension ApiAction.RequestVerifyPlayerEmail {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.RequestVerifyPlayerEmail.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.RequestVerifyPlayerEmail.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.RequestVerifyPlayerEmail.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.RequestVerifyPlayerEmail.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiRequestEmailVerifyResultData? {
+        get
+        }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class VerifyPlayerEmail {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setEmail(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.VerifyPlayerEmail
+    final public func setValidateCode(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.VerifyPlayerEmail
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.VerifyPlayerEmail.Result>) -> KzSDK_Swift.ApiAction.VerifyPlayerEmail
+    @objc deinit
+  }
+}
+extension ApiAction.VerifyPlayerEmail {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.VerifyPlayerEmail.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.VerifyPlayerEmail.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.VerifyPlayerEmail.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.VerifyPlayerEmail.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiPEVerifyResultData? {
+        get
+        }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class RequestVerifyPlayerPhone {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setPhone(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.RequestVerifyPlayerPhone
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.RequestVerifyPlayerPhone.Result>) -> KzSDK_Swift.ApiAction.RequestVerifyPlayerPhone
+    @objc deinit
+  }
+}
+extension ApiAction.RequestVerifyPlayerPhone {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.RequestVerifyPlayerPhone.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.RequestVerifyPlayerPhone.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.RequestVerifyPlayerPhone.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.RequestVerifyPlayerPhone.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiRequestPhoneVerifyResultData? {
+        get
+        }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetTransferHistory {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setStartDate(_ value: Foundation.Date?) -> KzSDK_Swift.ApiAction.GetTransferHistory
+    final public func setEndDate(_ value: Foundation.Date?) -> KzSDK_Swift.ApiAction.GetTransferHistory
+    final public func setOffset(_ value: Swift.Int?) -> KzSDK_Swift.ApiAction.GetTransferHistory
+    final public func setPageCount(_ value: Swift.Int?) -> KzSDK_Swift.ApiAction.GetTransferHistory
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetTransferHistory.Result>) -> KzSDK_Swift.ApiAction.GetTransferHistory
+    @objc deinit
+  }
+}
+extension ApiAction.GetTransferHistory {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetTransferHistory.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetTransferHistory.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetTransferHistory.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetTransferHistory.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetTransferHistory.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let history: [KzSDK_Swift.ApiAction.GetTransferHistory.Result.Body.History]?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct History : Swift.Codable {
+        public let inImageIos: Swift.String?
+        public let inGamePlatformId: Swift.String?
+        public let dno: Swift.String?
+        public let created: Swift.String?
+        public let remark: Swift.String?
+        public let outGamePlatformName: Swift.String?
+        public let transactionAmount: Swift.Double?
+        public let finalResultCode: Swift.Int?
+        public let inGamePlatformName: Swift.String?
+        public let finalResult: Swift.String?
+        public let outImageIos: Swift.String?
+        public let outGamePlatformId: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class SubmitDeposit {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setPpid(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.SubmitDeposit
+    final public func setOption(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.SubmitDeposit
+    final public func setAmount(_ value: Swift.Double?) -> KzSDK_Swift.ApiAction.SubmitDeposit
+    final public func setBank(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.SubmitDeposit
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.SubmitDeposit.Result>) -> KzSDK_Swift.ApiAction.SubmitDeposit
+    @objc deinit
+  }
+}
+extension ApiAction.SubmitDeposit {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.SubmitDeposit.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.SubmitDeposit.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.SubmitDeposit.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.SubmitDeposit.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.SubmitDeposit.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let qrCode: Swift.String?
+        public let html: Swift.String?
+        public let type: Swift.Int?
+        public let url: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class ReadMessage {
+    final public var retryCount: Swift.Int
+    public static let ID_ALL: Swift.String
+    public init()
+    final public func post()
+    final public func setMessageId(_ value: Swift.String) -> KzSDK_Swift.ApiAction.ReadMessage
+    final public func setReadAll() -> KzSDK_Swift.ApiAction.ReadMessage
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.ReadMessage.Result>) -> KzSDK_Swift.ApiAction.ReadMessage
+    @objc deinit
+  }
+}
+extension ApiAction.ReadMessage {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.ReadMessage.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.ReadMessage.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.ReadMessage.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.ReadMessage.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetRegisterAgentInfo {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetRegisterAgentInfo.Result>) -> KzSDK_Swift.ApiAction.GetRegisterAgentInfo
+    @objc deinit
+  }
+}
+extension ApiAction.GetRegisterAgentInfo {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetRegisterAgentInfo.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetRegisterAgentInfo.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetRegisterAgentInfo.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetRegisterAgentInfo.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetRegisterAgentInfo.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let regImage: Swift.String?
+        public let regSession: Swift.String?
+        public let regParams: KzSDK_Swift.ApiAction.GetRegisterAgentInfo.Result.Body.RegParams?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct RegParams : Swift.Codable {
+        public let regQQ: Swift.Bool
+        public let regEmail: Swift.Bool
+        public let regPhone: Swift.Bool
+        public init(_ regQQ: Swift.Bool?, _ regEmail: Swift.Bool?, _ regPhone: Swift.Bool?)
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class IsAccountEmailMatch {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setName(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.IsAccountEmailMatch
+    final public func setEmail(_ value: Swift.String?) -> KzSDK_Swift.ApiAction.IsAccountEmailMatch
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.IsAccountEmailMatch.Result>) -> KzSDK_Swift.ApiAction.IsAccountEmailMatch
+    @objc deinit
+  }
+}
+extension ApiAction.IsAccountEmailMatch {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.IsAccountEmailMatch.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.IsAccountEmailMatch.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.IsAccountEmailMatch.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.IsAccountEmailMatch.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiPEVerifyResultData? {
+        get
+        }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension ApiAction {
+  final public class GetDepositHistory {
+    final public var retryCount: Swift.Int
+    public init()
+    final public func post()
+    final public func setStartDate(_ value: Foundation.Date?) -> KzSDK_Swift.ApiAction.GetDepositHistory
+    final public func setEndDate(_ value: Foundation.Date?) -> KzSDK_Swift.ApiAction.GetDepositHistory
+    final public func setOffset(_ value: Swift.Int?) -> KzSDK_Swift.ApiAction.GetDepositHistory
+    final public func setPageCount(_ value: Swift.Int?) -> KzSDK_Swift.ApiAction.GetDepositHistory
+    final public func addListener(_ listener: KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetDepositHistory.Result>) -> KzSDK_Swift.ApiAction.GetDepositHistory
+    @objc deinit
+  }
+}
+extension ApiAction.GetDepositHistory {
+  final public class Listener : KzSDK_Swift.ApiListener<KzSDK_Swift.ApiAction.GetDepositHistory.Result> {
+    override public init(onSuccess: @escaping (KzSDK_Swift.ApiAction.GetDepositHistory.Result) -> Swift.Void, onFail: @escaping (KzSDK_Swift.ApiAction.GetDepositHistory.Result) -> Swift.Void)
+    @objc deinit
+  }
+  final public class Result : KzSDK_Swift.ApiResultProtocol {
+    final public var body: KzSDK_Swift.ApiAction.GetDepositHistory.Result.Body? {
+      get
+      }
+    final public var bodyProtocol: KzSDK_Swift.ApiResultBodyProtocol? {
+      get
+    }
+    required public init(jsonData: Foundation.Data?)
+    public struct Body : Swift.Codable, KzSDK_Swift.ApiResultBodyProtocol {
+      public let status: Swift.Int?
+      public let msg: Swift.String?
+      public let apiPath: Swift.String?
+      public let query: Swift.String?
+      public let createdDate: Swift.Int?
+      public let updatedDate: Swift.Int?
+      public var data: KzSDK_Swift.ApiAction.GetDepositHistory.Result.Body.Data? {
+        get
+        }
+      public struct Data : Swift.Codable {
+        public let history: [KzSDK_Swift.ApiAction.GetDepositHistory.Result.Body.History]?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public struct History : Swift.Codable {
+        public let actualDepositAmount: Swift.Double?
+        public let requestAmount: Swift.Double?
+        public let statusCode: Swift.Int?
+        public let dno: Swift.String?
+        public let createdDate: Foundation.Date?
+        public let transactionType: Swift.String?
+        public let bonus: Swift.Double?
+        public let status: Swift.String?
+        public init(from decoder: Swift.Decoder) throws
+        public func encode(to encoder: Swift.Encoder) throws
+      }
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+    }
+    @objc deinit
+  }
+}
+extension KzSDK_Swift.ApiAction.GetGamePlatformsBalance : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.VerifyPlayerPhone : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetGameListByPlatform : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetRegisterInfo : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.RequestResetPasswordByPhone : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.ResetPasswordVerifySmsCode : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.ApiActionFinishDeposit : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetBonus : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.RegisterAccount : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GameTransferOnEnter : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetKey : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetAllGamePlatformBalance : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.ChangePassword : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.ResetPasswordByPhone : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.RequestResetPasswordByEmail : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.DeleteMessage : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetDepositOption : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetActivitiesInfo : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.ResetPasswordByEmail : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetGPByPlatform : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.Logout : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetWebsiteConfig : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetMessageHistory : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.SubmitWithdraw : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetBasicKey : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetGamePlatformAccounts : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetRedPocketInfo : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetWithdrawBanksList : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.ChangeWithdrawPassword : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetWithdrawHistory : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetDownloadAppList : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.IsUserNameExist : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetDepositBank : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetClientInfo : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetClientInfo.Result.Body.Data.BannerType : Swift.Equatable {}
+extension KzSDK_Swift.ApiAction.GetClientInfo.Result.Body.Data.BannerType : Swift.Hashable {}
+extension KzSDK_Swift.ApiAction.GetClientInfo.Result.Body.Data.BannerType : Swift.RawRepresentable {}
+extension KzSDK_Swift.ApiAction.GetClientInfo.Result.Body.Data.ViewMode : Swift.Equatable {}
+extension KzSDK_Swift.ApiAction.GetClientInfo.Result.Body.Data.ViewMode : Swift.Hashable {}
+extension KzSDK_Swift.ApiAction.GetClientInfo.Result.Body.Data.ViewMode : Swift.RawRepresentable {}
+extension KzSDK_Swift.ApiAction.IsAgentUserNameExist : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.EditMemberInfo : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.TransferGp : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.RegisterAgentAccount : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.ResetPasswordVerifyEmailCode : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetActivitiesContent : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.RedeemRedPocket : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.RegisterSms : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.EditAvatar : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.AddBankCard : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetMemberInfo : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.SubmitAtmDeposit : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.Login : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetDepositOption.Result.PaymentOptionType : Swift.Equatable {}
+extension KzSDK_Swift.ApiAction.GetDepositOption.Result.PaymentOptionType : Swift.Hashable {}
+extension KzSDK_Swift.ApiAction.GetDepositOption.Result.PaymentOptionType : Swift.RawRepresentable {}
+extension KzSDK_Swift.ApiAction.GetGameUrl : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.ApplyActivities : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.IsAccountPhoneMatch : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetBetHistory : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.RequestVerifyPlayerEmail : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.VerifyPlayerEmail : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.RequestVerifyPlayerPhone : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetTransferHistory : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.SubmitDeposit : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.ReadMessage : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetRegisterAgentInfo : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.IsAccountEmailMatch : KzSDK_Swift.KzApi {}
+extension KzSDK_Swift.ApiAction.GetDepositHistory : KzSDK_Swift.KzApi {}
